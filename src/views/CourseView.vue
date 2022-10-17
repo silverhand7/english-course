@@ -1,5 +1,13 @@
 <template>
-    <div>
-        <h1>Hello World</h1>
-    </div>
+    <FlipCard />
 </template>
+
+<script>
+import FlipCard from '@/components/FlipCard.vue';
+
+export default {
+    components: {
+        FlipCard
+    }
+}
+</script>
