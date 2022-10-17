@@ -1,8 +1,11 @@
 <template>
     <div class="mt-5"></div>
     <carousel class="mt-5" :items-to-show="1">
+
         <Slide v-for="slide in slides" :key="slide.id">
-            <FlipCard :name="slide.name" :meaning="slide.meaning" :example="slide.example" />
+            <FlipCard v-if="slide.type === 'course'" :name="slide.name" :meaning="slide.meaning" :example="slide.example" />
+
+            <QuizCard v-if="slide.type === 'quiz'" :question="slide.question" :answers="slide.answers" />
         </Slide>
 
         <template #addons>
@@ -13,23 +16,26 @@
 
 <script>
 import FlipCard from '@/components/FlipCard.vue';
+import QuizCard from '@/components/QuizCard.vue';
 import 'vue3-carousel/dist/carousel.css'
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 
 export default {
     components: {
-        FlipCard,
-        Carousel,
-        Slide,
-        Pagination,
-        Navigation,
-    },
+    FlipCard,
+    QuizCard,
+    Carousel,
+    Slide,
+    Pagination,
+    Navigation,
+    QuizCard
+},
     props: {
         slides: {
             required: true,
             type: Array
         }
-    }
+    },
 }
 </script>
 
@@ -40,5 +46,11 @@ ol.carousel__track {
 ol.carousel__pagination {
     margin-top:40px;
     padding-left: 0;
+}
+.green {
+    background: greenyellow;
+}
+.red {
+    background: red;
 }
 </style>
