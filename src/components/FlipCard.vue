@@ -3,10 +3,11 @@
         <div class="flip-card" :class="{ clicked: isFlipped }">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
-                    <img src="https://picsum.photos/300" alt="Avatar" style="width:300px;height:300px;">
+                    <p>{{ name }}</p>
                 </div>
                 <div class="flip-card-back">
-                    <h1 class="mt-5">Back</h1>
+                    <p>{{ meaning }}</p>
+                    <p>{{ example }}</p>
                 </div>
                 <div class="flip-card-button">
                     <div @click="flip">
@@ -20,6 +21,21 @@
 
 <script>
 export default {
+    props: {
+        name: {
+            required: true,
+            type: String,
+        },
+        meaning: {
+            required: true,
+            type: String,
+        },
+        example: {
+            required: false,
+            default: '',
+            type: String,
+        }
+    },
     data() {
         return {
             isFlipped: false
@@ -76,7 +92,7 @@ export default {
     }
 
     .flip-card-button {
-        z-index: auto;
+        z-index: 2;
         cursor: pointer;
         position: absolute;
         bottom: -25px;

@@ -2,7 +2,7 @@
     <div class="mt-5"></div>
     <carousel class="mt-5" :items-to-show="1">
         <Slide v-for="slide in slides" :key="slide.id">
-            <FlipCard />
+            <FlipCard :name="slide.name" :meaning="slide.meaning" :example="slide.example" />
         </Slide>
 
         <template #addons>
