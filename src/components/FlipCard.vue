@@ -69,12 +69,14 @@ export default {
     }
 
     .flip-card-back {
+        z-index: -1;
         background-color: #2980b9;
         color: white;
         transform: rotateY(180deg);
     }
 
     .flip-card-button {
+        z-index: auto;
         cursor: pointer;
         position: absolute;
         bottom: -25px;

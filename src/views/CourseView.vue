@@ -1,13 +1,29 @@
 <template>
-    <FlipCard />
+    <CourseCarousel :slides="slides" />
 </template>
 
 <script>
-import FlipCard from '@/components/FlipCard.vue';
+import CourseCarousel from '@/components/CourseCarousel.vue';
 
 export default {
     components: {
-        FlipCard
+        CourseCarousel
+    },
+    data() {
+        return {
+            slides: [
+                {
+                    id: 1,
+                    name: 'Course 1',
+                    description: 'Lorem'
+                },
+                {
+                    id: 2,
+                    name: 'Course 2',
+                    description: 'Lorem Ipsum Course 2'
+                },
+            ]
+        }
     }
 }
 </script>
