@@ -52,6 +52,8 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
+        border-radius: 15px;
+        background:white;
     }
     .answer-options {
         margin-left: 0;
@@ -68,7 +70,7 @@ export default {
 
 
     .green {
-        background: #64ff4d;
+        background: #1cee4f;
     }
     .red {
         background: #ff7373;

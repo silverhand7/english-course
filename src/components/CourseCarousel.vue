@@ -1,6 +1,5 @@
 <template>
-    <div class="mt-5"></div>
-    <Carousel class="mt-5" :items-to-show="1" ref="myCarousel">
+    <Carousel :items-to-show="1" ref="myCarousel">
 
         <Slide v-for="slide in slides" :key="slide.id">
             <FlipCard v-if="slide.type === 'course'" :name="slide.name" :meaning="slide.meaning" :example="slide.example" />
@@ -45,7 +44,6 @@ ol.carousel__track {
     margin: 40px 0;
 }
 ol.carousel__pagination {
-    margin-top:40px;
     padding-left: 0;
 }
 </style>

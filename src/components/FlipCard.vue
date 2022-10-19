@@ -5,9 +5,10 @@
                 <div class="flip-card-front">
                     <p>{{ name }}</p>
                 </div>
-                <div class="flip-card-back">
+                <div class="flip-card-back bg-light text-dark">
                     <div>
-                        <p class="mb-5">{{ meaning }}</p>
+                        <p>{{ meaning }}</p>
+                        <div class="line"></div>
                         <p><i>"{{ example }}"</i></p>
                     </div>
                 </div>
@@ -57,6 +58,7 @@ export default {
         width: 300px;
         height: 500px;
         perspective: 1000px;
+        border-radius: 15px;
     }
 
     .flip-card-inner {
@@ -67,6 +69,7 @@ export default {
         transition: transform 0.6s;
         transform-style: preserve-3d;
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        border-radius: 15px;
     }
 
     .flip-card.clicked .flip-card-inner {
@@ -79,6 +82,7 @@ export default {
         height: 100%;
         -webkit-backface-visibility: hidden;
         backface-visibility: hidden;
+        border-radius: 15px;
     }
 
     .flip-card-front {
@@ -89,6 +93,7 @@ export default {
         font-size: 19px;
         line-height: 1.2em;
         padding: 15px;
+        background: white;
     }
     .flip-card-back {
         z-index: -1;
@@ -113,5 +118,9 @@ export default {
     .flip-card-button div img {
         width: 50px;
         border-radius: 10px;
+    }
+    .line {
+        border: 0.5px solid #ccc;
+        margin:25px 0;
     }
 </style>
