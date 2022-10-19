@@ -1,7 +1,13 @@
 <template>
     <Carousel v-if="!showScore" :items-to-show="1">
         <Slide v-for="material in materials" :key="material.id">
-            <FlipCard v-if="material.type === 'course'" :name="material.name" :meaning="material.meaning" :example="material.example" />
+            <FlipCard
+                v-if="material.type === 'course'"
+                :number="material.id"
+                :name="material.name"
+                :meaning="material.meaning"
+                :example="material.example"
+            />
 
             <QuizCard
                 v-if="material.type === 'quiz'"
@@ -12,7 +18,7 @@
         </Slide>
 
         <template #addons>
-            <pagination />
+            <!-- <pagination /> -->
         </template>
     </Carousel>
     <div v-else class="score bg-white p-4 text-center d-flex align-items-center justify-content-center">

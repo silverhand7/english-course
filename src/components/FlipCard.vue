@@ -3,6 +3,7 @@
         <div class="flip-card" :class="{ clicked: isFlipped }">
             <div class="flip-card-inner">
                 <div class="flip-card-front">
+                    <span class="flip-number">{{ number }}</span>
                     <p>{{ name }}</p>
                 </div>
                 <div class="flip-card-back bg-primary text-light">
@@ -25,6 +26,11 @@
 <script>
 export default {
     props: {
+        number: {
+            required: false,
+            type: Number,
+            default: 0,
+        },
         name: {
             required: true,
             type: String,
@@ -94,6 +100,15 @@ export default {
         line-height: 1.4em;
         padding: 15px;
         background: white;
+    }
+
+    .flip-number {
+        position: absolute;
+        top: 12px;
+        left: 10px;
+        padding: 10px 21px;
+        border-radius: 12px;
+        font-size: 26px;
     }
 
     .flip-card-back {

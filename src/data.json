@@ -161,6 +161,120 @@
                     "isTrue": false
                 }
             ]
+        },
+        {
+            "id": 19,
+            "type": "quiz",
+            "question": "He has been working at the factory for a very long time!",
+            "answers": [
+                {
+                    "answer": "donkey's years",
+                    "isTrue": false
+                },
+                {
+                    "answer": "a chill pill",
+                    "isTrue": false
+                },
+                {
+                    "answer": "as dead as a doornail",
+                    "isTrue": true
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "type": "quiz",
+            "question": "I think I am going to go ask Ron and obtain some information about this propsal.",
+            "answers": [
+                {
+                    "answer": "take a chill pill",
+                    "isTrue": false
+                },
+                {
+                    "answer": "show myself out",
+                    "isTrue": false
+                },
+                {
+                    "answer": "pick Ron's brain",
+                    "isTrue": true
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "type": "quiz",
+            "question": "She is a nice girl, but she's __________________.",
+            "answers": [
+                {
+                    "answer": "nothing to write home about",
+                    "isTrue": true
+                },
+                {
+                    "answer": "taking a chill pill",
+                    "isTrue": false
+                },
+                {
+                    "answer": "putting the feelers out",
+                    "isTrue": false
+                }
+            ]
+        },
+        {
+            "id": 20,
+            "type": "quiz",
+            "question": "I love my new computer! It is __________________.",
+            "answers": [
+                {
+                    "answer": "as dead as a doornail",
+                    "isTrue": false
+                },
+                {
+                    "answer": "everything but the kitchen sink",
+                    "isTrue": false
+                },
+                {
+                    "answer": "the best thing since sliced bread",
+                    "isTrue": true
+                }
+            ]
+        },
+        {
+            "id": 21,
+            "type": "quiz",
+            "question": "__________________! The restaurant should be around here",
+            "answers": [
+                {
+                    "answer": "Take a chill pill",
+                    "isTrue": false
+                },
+                {
+                    "answer": "Keep your eyes peeled",
+                    "isTrue": true
+                },
+                {
+                    "answer": "I'll show myself out",
+                    "isTrue": false
+                }
+            ]
+        },
+        {
+            "id": 21,
+            "type": "quiz",
+            "question": "__________________! Everything will be fine in the end.",
+            "answers": [
+                {
+                    "answer": "Take a chill pill",
+                    "isTrue": true
+                },
+                {
+                    "answer": "Put the feelers out",
+                    "isTrue": false
+                },
+                {
+                    "answer": "Kick the bucket",
+                    "isTrue": false
+                }
+            ]
         }
     ]
 }
