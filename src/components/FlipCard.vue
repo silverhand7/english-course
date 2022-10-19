@@ -5,7 +5,7 @@
                 <div class="flip-card-front">
                     <p>{{ name }}</p>
                 </div>
-                <div class="flip-card-back bg-light text-dark">
+                <div class="flip-card-back bg-primary text-light">
                     <div>
                         <p>{{ meaning }}</p>
                         <div class="line"></div>
