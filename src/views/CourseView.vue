@@ -1,5 +1,5 @@
 <template>
-    <CourseCarousel :slides="slides" />
+    <CourseCarousel :materials="materials" />
 </template>
 
 <script>
@@ -12,7 +12,7 @@ export default {
     },
     data() {
         return {
-            slides: sourceData.course,
+            materials: sourceData.course,
         }
     }
 }

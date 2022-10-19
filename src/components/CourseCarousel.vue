@@ -1,13 +1,13 @@
 <template>
     <Carousel :items-to-show="1" ref="myCarousel">
 
-        <Slide v-for="slide in slides" :key="slide.id">
-            <FlipCard v-if="slide.type === 'course'" :name="slide.name" :meaning="slide.meaning" :example="slide.example" />
+        <Slide v-for="material in materials" :key="material.id">
+            <FlipCard v-if="material.type === 'course'" :name="material.name" :meaning="material.meaning" :example="material.example" />
 
             <QuizCard
-                v-if="slide.type === 'quiz'"
-                :question="slide.question"
-                :answers="slide.answers"
+                v-if="material.type === 'quiz'"
+                :question="material.question"
+                :answers="material.answers"
                 @clickedAnswer="calculate"
             />
         </Slide>
@@ -40,7 +40,7 @@ export default {
         }
     },
     props: {
-        slides: {
+        materials: {
             required: true,
             type: Array
         }
