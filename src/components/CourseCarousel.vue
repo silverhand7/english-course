@@ -19,7 +19,7 @@
         <div>
             <p>Congratulations! 🎉</p>
             <p>Your Score is</p>
-            <h1>72</h1>
+            <h1>{{ score }}</h1>
 
             <p>Thanks for finishing the course!</p>
         </div>
@@ -46,7 +46,8 @@ export default {
         return {
             correctAnswer: 0,
             totalAnswered: 0,
-            showScore: false
+            showScore: false,
+            score: 0,
         }
     },
     props: {
@@ -66,6 +67,9 @@ export default {
             if (totalQuiz === this.totalAnswered) {
                 setTimeout(() => {
                    this.showScore = true;
+                   this.score = (totalQuiz - this.correctAnswer) / totalQuiz;
+                   this.score *= 100;
+                   this.score = parseInt(this.score);
                 }, 1500);
             }
         }

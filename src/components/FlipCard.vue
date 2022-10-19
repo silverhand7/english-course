@@ -95,6 +95,7 @@ export default {
         padding: 15px;
         background: white;
     }
+
     .flip-card-back {
         z-index: -1;
         background-color: #2e5d2d;
@@ -120,6 +121,7 @@ export default {
         width: 50px;
         border-radius: 10px;
     }
+
     .line {
         border: 0.5px solid #ccc;
         margin:25px 0;

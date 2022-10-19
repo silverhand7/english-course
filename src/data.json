@@ -92,6 +92,20 @@
             "example": "When flip phones came out I thought they were the best thing since sliced bread! I miss hanging up so sassily"
         },
         {
+            "id": 14,
+            "type": "course",
+            "name": "Take a chill pill!",
+            "meaning": "Calm down! Relax!",
+            "example": "At the picnic, I told Mary to take a chill pill as she was freaking out about a wasp."
+        },
+        {
+            "id": 14,
+            "type": "course",
+            "name": "I’ll show myself out",
+            "meaning": "Used when you have disgraced yourself, to save someone else from having to ‘show you the door’",
+            "example": "What’s the difference between snowmen and snowwomen? Snowballs! I’ll see myself out"
+        },
+        {
             "id": 16,
             "type": "quiz",
             "question": "What is Bob's your uncle means?",
@@ -125,6 +139,25 @@
                 },
                 {
                     "answer": "I don't know",
+                    "isTrue": false
+                }
+            ]
+        },
+        {
+            "id": 18,
+            "type": "quiz",
+            "question": "I left my money at home. Let's leave quickly to avoid paying the bill!",
+            "answers": [
+                {
+                    "answer": "kick the bucket",
+                    "isTrue": false
+                },
+                {
+                    "answer": "do a runner",
+                    "isTrue": true
+                },
+                {
+                    "answer": "keep our eyes peeled",
                     "isTrue": false
                 }
             ]
