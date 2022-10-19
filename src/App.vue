@@ -8,3 +8,10 @@ import HelloWorld from './components/HelloWorld.vue'
     <RouterView />
   </div>
 </template>
+
+
+<style>
+  body {
+    font-family: 'Poppins', sans-serif!important;
+  }
+</style>

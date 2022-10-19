@@ -1,6 +1,6 @@
 <template>
     <div class="mt-5"></div>
-    <carousel class="mt-5" :items-to-show="1">
+    <Carousel class="mt-5" :items-to-show="1" ref="myCarousel">
 
         <Slide v-for="slide in slides" :key="slide.id">
             <FlipCard v-if="slide.type === 'course'" :name="slide.name" :meaning="slide.meaning" :example="slide.example" />
@@ -11,7 +11,7 @@
         <template #addons>
             <pagination />
         </template>
-    </carousel>
+    </Carousel>
 </template>
 
 <script>
@@ -22,20 +22,21 @@ import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel'
 
 export default {
     components: {
-    FlipCard,
-    QuizCard,
-    Carousel,
-    Slide,
-    Pagination,
-    Navigation,
-    QuizCard
-},
+        FlipCard,
+        QuizCard,
+        Carousel,
+        Slide,
+        Pagination,
+        Navigation,
+        QuizCard
+    },
     props: {
         slides: {
             required: true,
             type: Array
         }
-    },
+    }
+
 }
 </script>
 

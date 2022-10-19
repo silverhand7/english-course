@@ -6,8 +6,10 @@
                     <p>{{ name }}</p>
                 </div>
                 <div class="flip-card-back">
-                    <p>{{ meaning }}</p>
-                    <p>{{ example }}</p>
+                    <div>
+                        <p class="mb-5">{{ meaning }}</p>
+                        <p><i>"{{ example }}"</i></p>
+                    </div>
                 </div>
                 <div class="flip-card-button">
                     <div @click="flip">
@@ -80,15 +82,23 @@ export default {
     }
 
     .flip-card-front {
-        background-color: #bbb;
         color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 19px;
+        line-height: 1.2em;
+        padding: 15px;
     }
-
     .flip-card-back {
         z-index: -1;
-        background-color: #2980b9;
-        color: white;
+        background-color: #2e5d2d;
+        color: #fff;
         transform: rotateY(180deg);
+        padding:15px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .flip-card-button {
