@@ -73,7 +73,7 @@ export default {
             if (totalQuiz === this.totalAnswered) {
                 setTimeout(() => {
                    this.showScore = true;
-                   this.score = (totalQuiz - this.correctAnswer) / totalQuiz;
+                   this.score = (totalQuiz - (totalQuiz - this.correctAnswer)) / totalQuiz;
                    this.score *= 100;
                    this.score = parseInt(this.score);
                 }, 1500);
