@@ -1,6 +1,5 @@
 <template>
-    <Carousel :items-to-show="1" ref="myCarousel">
-
+    <Carousel v-if="!showScore" :items-to-show="1">
         <Slide v-for="material in materials" :key="material.id">
             <FlipCard v-if="material.type === 'course'" :name="material.name" :meaning="material.meaning" :example="material.example" />
 
@@ -16,6 +15,15 @@
             <pagination />
         </template>
     </Carousel>
+    <div v-else class="score bg-white p-4 text-center d-flex align-items-center justify-content-center">
+        <div>
+            <p>Congratulations! 🎉</p>
+            <p>Your Score is</p>
+            <h1>72</h1>
+
+            <p>Thanks for finishing the course!</p>
+        </div>
+    </div>
 </template>
 
 <script>
@@ -37,6 +45,8 @@ export default {
     data() {
         return {
             correctAnswer: 0,
+            totalAnswered: 0,
+            showScore: false
         }
     },
     props: {
@@ -47,17 +57,31 @@ export default {
     },
     methods: {
         calculate(data) {
+            this.totalAnswered++;
             if(data.isCorrect) {
                 this.correctAnswer++;
             }
-            console.log(this.correctAnswer);
+
+            const totalQuiz = this.materials.filter(t => t.type == 'quiz').length;
+            if (totalQuiz === this.totalAnswered) {
+                setTimeout(() => {
+                   this.showScore = true;
+                }, 1500);
+            }
         }
-    }
+    },
 
 }
 </script>
 
 <style>
+.score {
+    width: 300px;
+    border-radius: 15px;
+    height: 500px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin:40px auto;
+}
 ol.carousel__track {
     margin: 40px 0;
 }

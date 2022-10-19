@@ -5,15 +5,14 @@
             <ul class="answer-options">
                 <li v-for="option in answers"
                     @click="clickAnswer(option)"
-                    :class="[(isAnswered ?
-                        (isCorrect && optionAnswer === option.answer) ? 'green' : '' : ''),
+                    :class="[(isAnswered ? isCorrect && optionAnswer === option.answer ? 'green' : '' : ''),
                         (isCorrection === option.answer ? 'green' : ''),
                         (isAnswered ? !isCorrect && optionAnswer === option.answer ? 'red' : '' : ''
                     )]"
                 >{{ option.answer }}</li>
             </ul>
         </div>
-        </div>
+    </div>
 </template>
 
 <script>
