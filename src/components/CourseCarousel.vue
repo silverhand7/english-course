@@ -48,10 +48,4 @@ ol.carousel__pagination {
     margin-top:40px;
     padding-left: 0;
 }
-.green {
-    background: greenyellow;
-}
-.red {
-    background: red;
-}
 </style>

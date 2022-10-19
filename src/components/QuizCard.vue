@@ -1,13 +1,15 @@
 <template>
-    <div>
-        <p>{{ question }}</p>
-        <ul>
-            <li v-for="option in answers"
-                @click="clickAnswer(option)"
-                :class="[(isAnswered ? isCorrect && optionAnswer === option.answer ? 'green' : '' : ''), (isAnswered ? !isCorrect && optionAnswer === option.answer ? 'red' : '' : '')]"
-            >{{ option.answer }}</li>
-        </ul>
-    </div>
+    <div class="question-card">
+        <div>
+            <p>{{ question }}</p>
+            <ul class="answer-options">
+                <li v-for="option in answers"
+                    @click="clickAnswer(option)"
+                    :class="[(isAnswered ? isCorrect && optionAnswer === option.answer ? 'green' : '' : ''), (isAnswered ? !isCorrect && optionAnswer === option.answer ? 'red' : '' : '')]"
+                >{{ option.answer }}</li>
+            </ul>
+        </div>
+        </div>
 </template>
 
 <script>
@@ -38,3 +40,47 @@ export default {
     }
 }
 </script>
+
+<style>
+    .question-card {
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        width: 300px;
+        height: 500px;
+        perspective: 1000px;
+        text-align: left;
+        padding:20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .answer-options {
+        margin-left: 0;
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .answer-options li {
+        padding: 10px;
+        border: 1px solid #ccc;
+        margin-bottom:10px;
+        cursor: pointer;
+    }
+
+
+    .green {
+        background: #64ff4d;
+    }
+    .red {
+        background: #ff7373;
+        color: white;
+        animation: horizontal-shaking 0.25s;
+    }
+
+    @keyframes horizontal-shaking {
+        0% { transform: translateX(0) }
+        25% { transform: translateX(5px) }
+        50% { transform: translateX(-5px) }
+        75% { transform: translateX(5px) }
+        100% { transform: translateX(0) }
+    }
+</style>
