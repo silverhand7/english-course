@@ -4,7 +4,12 @@
         <Slide v-for="slide in slides" :key="slide.id">
             <FlipCard v-if="slide.type === 'course'" :name="slide.name" :meaning="slide.meaning" :example="slide.example" />
 
-            <QuizCard v-if="slide.type === 'quiz'" :question="slide.question" :answers="slide.answers" />
+            <QuizCard
+                v-if="slide.type === 'quiz'"
+                :question="slide.question"
+                :answers="slide.answers"
+                @clickedAnswer="calculate"
+            />
         </Slide>
 
         <template #addons>
@@ -29,10 +34,23 @@ export default {
         Navigation,
         QuizCard
     },
+    data() {
+        return {
+            correctAnswer: 0,
+        }
+    },
     props: {
         slides: {
             required: true,
             type: Array
+        }
+    },
+    methods: {
+        calculate(data) {
+            if(data.isCorrect) {
+                this.correctAnswer++;
+            }
+            console.log(this.correctAnswer);
         }
     }
 

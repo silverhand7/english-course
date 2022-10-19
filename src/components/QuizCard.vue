@@ -5,7 +5,11 @@
             <ul class="answer-options">
                 <li v-for="option in answers"
                     @click="clickAnswer(option)"
-                    :class="[(isAnswered ? isCorrect && optionAnswer === option.answer ? 'green' : '' : ''), (isAnswered ? !isCorrect && optionAnswer === option.answer ? 'red' : '' : '')]"
+                    :class="[(isAnswered ?
+                        (isCorrect && optionAnswer === option.answer) ? 'green' : '' : ''),
+                        (isCorrection === option.answer ? 'green' : ''),
+                        (isAnswered ? !isCorrect && optionAnswer === option.answer ? 'red' : '' : ''
+                    )]"
                 >{{ option.answer }}</li>
             </ul>
         </div>
@@ -29,13 +33,23 @@ export default {
             optionAnswer: '',
             isAnswered: false,
             isCorrect: false,
+            isCorrection: false,
         }
     },
     methods: {
         clickAnswer(answer) {
-            this.optionAnswer = answer.answer;
-            this.isAnswered = true;
-            this.isCorrect = answer.isTrue;
+            if (!this.isAnswered) {
+                this.optionAnswer = answer.answer;
+                this.isAnswered = true;
+                this.isCorrect = answer.isTrue;
+                this.$emit('clickedAnswer', {
+                    'isCorrect': this.isCorrect,
+                });
+                if (!this.isCorrect) {
+                    const correctAnswer = this.answers.find(answer => answer.isTrue == true).answer;
+                    this.isCorrection = correctAnswer;
+                }
+            }
         }
     }
 }
@@ -70,7 +84,8 @@ export default {
 
 
     .green {
-        background: #1cee4f;
+        background: #198754;
+        color: white;
     }
     .red {
         background: #ff7373;
