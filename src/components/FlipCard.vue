@@ -91,7 +91,7 @@ export default {
         justify-content: center;
         align-items: center;
         font-size: 19px;
-        line-height: 1.2em;
+        line-height: 1.4em;
         padding: 15px;
         background: white;
     }
@@ -104,6 +104,7 @@ export default {
         display: flex;
         align-items: center;
         justify-content: center;
+        line-height: 1.4em;
     }
 
     .flip-card-button {
