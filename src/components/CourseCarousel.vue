@@ -18,7 +18,7 @@
         </Slide>
 
         <template #addons>
-            <!-- <pagination /> -->
+            <pagination />
         </template>
     </Carousel>
     <div v-else class="score bg-white p-4 text-center d-flex align-items-center justify-content-center">

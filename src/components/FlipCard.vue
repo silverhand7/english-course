@@ -141,4 +141,8 @@ export default {
         border: 0.5px solid #ccc;
         margin:25px 0;
     }
+
+    .carousel__pagination-button::after {
+        width: 7px!important;
+    }
 </style>
