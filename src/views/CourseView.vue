@@ -1,4 +1,5 @@
 <template>
+    <h2 class="text-white text-center mt-3">15 funny idioms</h2>
     <CourseCarousel :materials="materials" />
 </template>
 
