@@ -1,6 +1,7 @@
 <template>
-    <h2 class="text-white text-center mt-3">15 funny idioms</h2>
-    <div class="course-width">
+    <br>
+    <h2 class="text-white text-center">15 funny idioms</h2>
+    <div class="course">
         <CourseCarousel :materials="materials" />
     </div>
 </template>
@@ -22,7 +23,7 @@ export default {
 </script>
 
 <style>
-.course-width {
+.course {
     margin:auto;
     max-width: 500px;
 }
