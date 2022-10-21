@@ -61,12 +61,14 @@ export default {
         height: 500px;
         perspective: 1000px;
         text-align: left;
-        padding:20px;
+        padding:35px;
         display: flex;
         align-items: center;
         justify-content: center;
         border-radius: 15px;
-        background:white;
+        background: linear-gradient(110.72deg, rgba(255, 255, 255, 0.36) 1.21%, rgba(196, 196, 196, 0.06) 100%);
+        backdrop-filter: blur(15px);
+        color: white;
     }
     .answer-options {
         margin-left: 0;
@@ -76,7 +78,7 @@ export default {
 
     .answer-options li {
         padding: 10px;
-        border: 1px solid #ccc;
+        border: 1px solid #fff;
         margin-bottom:10px;
         cursor: pointer;
     }

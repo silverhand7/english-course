@@ -98,7 +98,7 @@ export default {
         align-items: center;
         font-size: 19px;
         line-height: 1.4em;
-        padding: 15px;
+        padding: 35px;
         background: linear-gradient(110.72deg, rgba(255, 255, 255, 0.36) 1.21%, rgba(196, 196, 196, 0.06) 100%);
         backdrop-filter: blur(15px);
 
@@ -119,7 +119,7 @@ export default {
         backdrop-filter: blur(15px);
         color: #fff;
         transform: rotateY(180deg);
-        padding:15px;
+        padding:35px;
         display: flex;
         align-items: center;
         justify-content: center;
