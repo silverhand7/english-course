@@ -2,11 +2,11 @@
     <div>
         <div class="flip-card" :class="{ clicked: isFlipped }">
             <div class="flip-card-inner">
-                <div class="flip-card-front">
+                <div class="flip-card-front bg-blurry">
                     <span class="flip-number">{{ number }}</span>
                     <p>{{ name }}</p>
                 </div>
-                <div class="flip-card-back text-light">
+                <div class="flip-card-back bg-blurry text-light">
                     <div>
                         <p>{{ meaning }}</p>
                         <div class="line"></div>
@@ -99,7 +99,6 @@ export default {
         font-size: 19px;
         line-height: 1.4em;
         padding: 35px;
-        background: linear-gradient(110.72deg, rgba(255, 255, 255, 0.36) 1.21%, rgba(196, 196, 196, 0.06) 100%);
         backdrop-filter: blur(15px);
 
     }
@@ -115,7 +114,6 @@ export default {
 
     .flip-card-back {
         z-index: -1;
-        background: linear-gradient(110.72deg, rgba(255, 255, 255, 0.36) 1.21%, rgba(196, 196, 196, 0.06) 100%);
         backdrop-filter: blur(15px);
         color: #fff;
         transform: rotateY(180deg);

@@ -14,4 +14,7 @@ import HelloWorld from './components/HelloWorld.vue'
   body {
     font-family: 'Poppins', sans-serif!important;
   }
+  .bg-blurry {
+    background: linear-gradient(110.72deg, rgba(255, 255, 255, 0.36) 1.21%, rgba(196, 196, 196, 0.06) 100%);
+  }
 </style>

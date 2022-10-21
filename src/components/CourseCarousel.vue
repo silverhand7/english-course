@@ -1,28 +1,46 @@
 <template>
-    <Carousel v-if="!showScore" :items-to-show="1">
-        <Slide v-for="material in materials" :key="material.id">
-            <FlipCard
-                v-if="material.type === 'course'"
-                :number="material.id"
-                :name="material.name"
-                :meaning="material.meaning"
-                :example="material.example"
-            />
+    <div v-if="!showScore" >
+        <Carousel :items-to-show="1" v-model="currentSlide">
+            <Slide v-for="material in materials" :key="material.id">
+                <FlipCard
+                    v-if="material.type === 'course'"
+                    :number="material.id"
+                    :name="material.name"
+                    :meaning="material.meaning"
+                    :example="material.example"
+                />
 
-            <QuizCard
-                v-if="material.type === 'quiz'"
-                :question="material.question"
-                :answers="material.answers"
-                @clickedAnswer="calculate"
-            />
-        </Slide>
+                <QuizCard
+                    v-if="material.type === 'quiz'"
+                    :question="material.question"
+                    :answers="material.answers"
+                    @clickedAnswer="calculate"
+                />
+                <div>
+                    <div class="carousel__prev"
+                        :class="{'carousel__prev--disabled': currentSlide == 0}"
+                        @click="prev"
+                    >
+                        <svg class="carousel__icon" viewBox="0 0 24 24" role="img" ariaLabel="arrowLeft"><title>arrowLeft</title><path d="M15.41 16.59L10.83 12l4.58-4.59L14 6l-6 6 6 6 1.41-1.41z"></path></svg>
+                    </div>
+                    <div class="carousel__next"
+                        :class="{'carousel__next--disabled': currentSlide == materials.length - 1}"
+                        @click="next"
+                    >
+                        <svg class="carousel__icon" viewBox="0 0 24 24" role="img" ariaLabel="arrowRight"><title>arrowRight</title><path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"></path></svg>
+                    </div>
+                </div>
+            </Slide>
+        </Carousel>
+        <div class="progress progress-bar-customize">
+            <div class="progress-bar" role="progressbar"
+                :style="{ 'width': progress + '%' }"
+                aria-valuemax="100">
+            </div>
+        </div>
+    </div>
 
-        <template #addons>
-            <navigation />
-            <pagination />
-        </template>
-    </Carousel>
-    <div v-else class="score bg-white p-4 text-center d-flex align-items-center justify-content-center">
+    <div v-else class="score bg-blurry p-4 text-center text-white d-flex align-items-center justify-content-center">
         <div>
             <p>Congratulations! 🎉</p>
             <p>Your Score is</p>
@@ -46,8 +64,8 @@ export default {
         Carousel,
         Slide,
         Pagination,
-        Navigation,
-        QuizCard
+        QuizCard,
+        Navigation
     },
     data() {
         return {
@@ -55,6 +73,13 @@ export default {
             totalAnswered: 0,
             showScore: false,
             score: 0,
+            currentSlide: 0,
+            progress: 0,
+        }
+    },
+    computed: {
+        totalSlides() {
+            return this.materials.length;
         }
     },
     props: {
@@ -79,7 +104,15 @@ export default {
                    this.score = parseInt(this.score);
                 }, 1500);
             }
-        }
+        },
+        next() {
+            this.currentSlide += 1;
+            this.progress = (this.currentSlide / (this.totalSlides - 1)) * 100;
+        },
+        prev() {
+            this.currentSlide -= 1;
+            this.progress = (this.currentSlide / (this.totalSlides - 1)) * 100;
+        },
     },
 
 }
@@ -114,5 +147,15 @@ ol.carousel__pagination {
 
 .carousel__prev:hover, .carousel__next:hover {
     color: white;
+}
+
+.progress-bar-customize {
+    height: 8px;
+    background: #385682;
+    border-radius: 120px;
+}
+
+.progress-bar-customize .progress-bar {
+    background: #A8F68C;
 }
 </style>
