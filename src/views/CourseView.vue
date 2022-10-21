@@ -1,6 +1,8 @@
 <template>
     <h2 class="text-white text-center mt-3">15 funny idioms</h2>
-    <CourseCarousel :materials="materials" />
+    <div class="course-width">
+        <CourseCarousel :materials="materials" />
+    </div>
 </template>
 
 <script>
@@ -18,3 +20,10 @@ export default {
     }
 }
 </script>
+
+<style>
+.course-width {
+    margin:auto;
+    max-width: 500px;
+}
+</style>

@@ -6,7 +6,7 @@
                     <span class="flip-number">{{ number }}</span>
                     <p>{{ name }}</p>
                 </div>
-                <div class="flip-card-back bg-primary text-light">
+                <div class="flip-card-back text-light">
                     <div>
                         <p>{{ meaning }}</p>
                         <div class="line"></div>
@@ -15,7 +15,7 @@
                 </div>
                 <div class="flip-card-button">
                     <div @click="flip">
-                        <img src="../assets/images/flip-icon.jpg" alt="">
+                        <img src="../assets/images/flip-btn.png" alt="">
                     </div>
                 </div>
             </div>
@@ -92,14 +92,16 @@ export default {
     }
 
     .flip-card-front {
-        color: black;
+        color: #FFFFFF;
         display: flex;
         justify-content: center;
         align-items: center;
         font-size: 19px;
         line-height: 1.4em;
         padding: 15px;
-        background: white;
+        background: linear-gradient(110.72deg, rgba(255, 255, 255, 0.36) 1.21%, rgba(196, 196, 196, 0.06) 100%);
+        backdrop-filter: blur(15px);
+
     }
 
     .flip-number {
@@ -113,7 +115,8 @@ export default {
 
     .flip-card-back {
         z-index: -1;
-        background-color: #2e5d2d;
+        background: linear-gradient(110.72deg, rgba(255, 255, 255, 0.36) 1.21%, rgba(196, 196, 196, 0.06) 100%);
+        backdrop-filter: blur(15px);
         color: #fff;
         transform: rotateY(180deg);
         padding:15px;
@@ -127,13 +130,13 @@ export default {
         z-index: 2;
         cursor: pointer;
         position: absolute;
-        bottom: -25px;
+        bottom: -35px;
         left: 50%;
         transform: translateX(-50%);
     }
 
     .flip-card-button div img {
-        width: 50px;
+        width: 75px;
         border-radius: 10px;
     }
 

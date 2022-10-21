@@ -18,6 +18,7 @@
         </Slide>
 
         <template #addons>
+            <navigation />
             <pagination />
         </template>
     </Carousel>
@@ -92,10 +93,26 @@ export default {
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     margin:40px auto;
 }
+
 ol.carousel__track {
     margin: 40px 0;
 }
+
 ol.carousel__pagination {
     padding-left: 0;
+}
+
+.carousel__prev, .carousel__next {
+    background-image: url(/src/assets/images/arrow-bg.png) !important;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 45px;
+    height: 65px;
+    color: white;
+}
+
+.carousel__prev:hover, .carousel__next:hover {
+    color: white;
 }
 </style>
